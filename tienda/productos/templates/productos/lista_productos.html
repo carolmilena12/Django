@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online</title>
+    <style>
+        /* Contenedor de la lista */
+        ul {
+            display: grid; /* Usamos grid para organizar los elementos */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Columnas dinámicas */
+            gap: 15px; /* Espacio entre las cajitas */
+            list-style: none; /* Eliminamos los puntos de lista */
+            padding: 0; /* Eliminamos el padding por defecto */
+            margin: 20px; /* Espaciado externo */
+        }
+
+        /* Estilo para cada elemento de la lista */
+        li {
+            background-color: #ffffff; /* Fondo blanco */
+            border: 1px solid #ddd; /* Borde ligero */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+            padding: 10px;
+            text-align: center; /* Centrar el texto */
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Productos de la tienda</h1>
+    <ul>
+        {% for producto in productos %}
+        <li>
+            <strong>{{ producto.nombre }}</strong>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
